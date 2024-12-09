@@ -40,7 +40,7 @@ if city_name == "y"
     
 
 elsif city_name == "n"
-  puts "Goodbye!"
+  puts "Goodbye now!"
 else
   puts "Invalid selection"
 end
