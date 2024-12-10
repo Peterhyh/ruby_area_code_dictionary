@@ -11,6 +11,20 @@ dial_book = {
   "lancaster" => "717"
 }
 
+def get_city_name(user_response, city_list)
+  if city_list.has_key?(user_response)
+    city_list.each do |k, v|
+      if user_response == k
+        puts "The area code for #{k}, is #{v}"
+        return false
+      end
+    end
+  else
+    puts "Invalid selection"
+    return true
+  end
+end
+
 puts "Do you want to lookup an area code based on the city name? (Y/N)"
 city_name = gets.chomp.downcase
 
@@ -20,22 +34,13 @@ if city_name == "y"
     puts k
   end
   
-  invalid_selection = true
+  loop = true
 
-  while invalid_selection
+  while loop
     puts "Enter your selection"
     user_selection = gets.chomp.downcase
-
-    if dial_book.has_key?(user_selection)
-      dial_book.each do |k, v|
-        if user_selection == k
-          puts "The area code for #{k}, is #{v}"
-        end
-      end
-    invalid_selection = false
-    else
-      puts "Invalid selection"
-    end
+    result = get_city_name(user_selection, dial_book)
+    loop = result
   end
     
 
