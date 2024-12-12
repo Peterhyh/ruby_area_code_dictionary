@@ -25,31 +25,30 @@ def get_area_code(user_response, city_list)
     return true
   end
 end
-loop_program = true
-while loop_program
-  puts "Do you want to lookup an area code based on the city name? (Y/N)"
-  city_name = gets.chomp.downcase
 
-  if city_name == "y"
+loop do 
+  puts "Do you want to lookup an area code based on the city name? (Y/N)"
+  response = gets.chomp.downcase
+
+  if response == "y"
     puts "Which city do you want the area code for?"
     dial_book.each do |k, v|
       puts k
     end
-    
-    loop = true
 
-    while loop
+    loop do
       puts "Enter your selection"
       user_selection = gets.chomp.downcase
       result = get_area_code(user_selection, dial_book)
-      loop = result
+      break if result == false
     end
       
 
-  elsif city_name == "n"
+  elsif response == "n"
     puts "Goodbye!"
     break
   else
     puts "Invalid selection"
   end
+  
 end
