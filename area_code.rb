@@ -45,7 +45,7 @@ loop do
       
 
   elsif response == "n"
-    puts "Goodbye Now!"
+    puts "Goodbye!"
     break
   else
     puts "Invalid selection"
