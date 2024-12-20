@@ -35,6 +35,6 @@ loop do
   if dial_book.include?(user_selection)
     puts "The area code for #{user_selection} is #{get_area_code(user_selection, dial_book)}"
   else
-    puts "You have entered an invalid choice"
+    puts "Invalid choice"
   end
 end
